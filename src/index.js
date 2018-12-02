@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/css/index.css';
 import User from './components/shared/Header/Menu/User/User';
 
 ReactDOM.render(
