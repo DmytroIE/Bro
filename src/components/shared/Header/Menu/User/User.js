@@ -1,8 +1,11 @@
 import React from 'react';
-import Header from '../../Header';
+import Nav from '../Nav/Nav';
+import Mainpage from '../../../../MainPage/MainPage';
 
-export default () => (
+const User = () => (
   <div>
-    <Header />
+    <Mainpage />
+    <Nav />
   </div>
 );
+export default User;
