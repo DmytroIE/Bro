@@ -1,0 +1,41 @@
+@value dark-text-color from '../../../assets/css/variables.css';
+
+.container {
+  /* position: absolute;
+  top: 63px;
+  left: 50%;
+  transform: translateX(-50%); */
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  width: 1795px;
+}
+
+.timer {
+  margin-top: 170px;
+}
+
+.question {
+  width: 1140px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.progress {
+  margin-bottom: 18px;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+.options {
+  margin-bottom: 25px;
+}
+
+.controls {
+  margin-top: 170px;
+}

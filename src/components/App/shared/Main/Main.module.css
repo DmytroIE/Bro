@@ -1,0 +1,5 @@
+@value light-bg-color from '../../../../assets/css/variables.css';
+
+.container {
+  background-color: light-bg-color;
+}

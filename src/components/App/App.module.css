@@ -1,0 +1,6 @@
+.wrapper {
+  width: 1920px; /*!!!!!Временно, потому что браузер обычно дает меньше, чем 1920 (обычно 1536).
+  Потом переделать на mediaqueries*/
+  position: relative;
+  background-color: #f9f9f9;
+}
