@@ -1,0 +1,52 @@
+@value dark-text-color from '../../../../../assets/css/variables.css';
+@value cold-accent-color from '../../../../../assets/css/variables.css';
+@value light-text-color from '../../../../../assets/css/variables.css';
+@value light-bg-color from '../../../../../assets/css/variables.css';
+
+.container {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  background-color: #fff;
+  box-shadow: 0px 2px 40px 0px rgba(44, 46, 51, 0.4);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 25px;
+  min-height: 152px;
+  height: 100%;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.container:hover {
+  background-color: cold-accent-color;
+}
+
+.container:focus {
+  outline: 0;
+  box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.6);
+}
+
+.letter {
+  flex: 0 0 43px;
+  margin-right: 15px;
+}
+
+.text {
+  font-family: 'Open Sans';
+  font-size: 16px;
+  color: dark-text-color;
+  font-weight: 300;
+  text-align: left;
+}
+
+.selected {
+  composes: container;
+  background-color: cold-accent-color;
+}
+
+.selected .text {
+  color: light-text-color;
+}

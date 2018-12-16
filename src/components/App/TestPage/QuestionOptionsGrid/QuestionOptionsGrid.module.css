@@ -1,0 +1,22 @@
+@value light-bg-color from '../../../../assets/css/variables.css';
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 0 0 48.9%;
+  margin-right: 2.2%;
+  margin-bottom: 28px;
+}
+
+.item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.item:nth-child(2n):nth-last-child(1),
+.item:nth-child(2n + 1):nth-last-child(2),
+.item:nth-child(2n + 1):nth-last-child(1) {
+  margin-bottom: 0;
+}

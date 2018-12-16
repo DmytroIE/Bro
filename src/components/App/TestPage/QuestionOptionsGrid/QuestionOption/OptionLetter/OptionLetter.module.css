@@ -1,0 +1,16 @@
+@value light-text-color from '../../../../../../assets/css/variables.css';
+@value dark-text-color from '../../../../../../assets/css/variables.css';
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: light-text-color;
+  box-shadow: 0px 2px 3px 0px rgba(32, 32, 32, 0.2);
+  width: 43px;
+  height: 43px;
+  font-family: 'Roboto';
+  font-size: 23px;
+  color: dark-text-color;
+}
