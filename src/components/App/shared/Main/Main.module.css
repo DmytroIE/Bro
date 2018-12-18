@@ -3,3 +3,11 @@
 .container {
   background-color: light-bg-color;
 }
+
+.absolute {
+  position: absolute;
+  top: 63px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1795px;
+}

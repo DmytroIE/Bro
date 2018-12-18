@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 import TestControls from './TestControls/TestControls';
 import TestTimer from './TestTimer/TestTimer';
@@ -105,22 +105,30 @@ const tempTestObj = {
 };
 
 class TestPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = prepareForANewTest(tempTestObj);
-    this.timer = new Timer();
-  }
+  state = prepareForANewTest(tempTestObj);
+
+  timer = new Timer();
+
+  ref = createRef();
 
   componentDidMount() {
     // Скорее всего, не здесь, а будет появляться модалка с текстом "Начать тест?"
-    this.timer.start(this.onTimerTick);
+    // this.timer.start(this.onTimerTick);
+
+    const { onResize } = this.props;
+    onResize(this.ref.current.offsetHeight);
+    console.log('M - TestPage height is :', this.ref.current.offsetHeight);
   }
 
   componentDidUpdate(prevProps, prevState) {
     const { numberOfCurrentQuestion } = this.state;
     if (numberOfCurrentQuestion !== prevState.numberOfCurrentQuestion) {
-      this.timer.start(this.onTimerTick);
+      // this.timer.start(this.onTimerTick);
     }
+
+    const { onResize } = this.props;
+    onResize(this.ref.current.offsetHeight);
+    console.log('U - TestPage height is :', this.ref.current.offsetHeight);
   }
 
   componentWillUnmount() {
@@ -170,7 +178,7 @@ class TestPage extends Component {
 
     this.timer.reset();
     this.setState(prevState => ({
-      // isTestFinished: true,
+      isTestFinished: true,
 
       // Временно!!!!!!!!!!!!!!!!!!!!!!!!
       // В действительности результаты должны быть отправлены на бекенд, в LS
@@ -188,10 +196,11 @@ class TestPage extends Component {
       questions,
       remainingTime,
     } = this.state;
+
     const currQuestion = questions[numberOfCurrentQuestion - 1];
 
     return (
-      <div className={styles.container}>
+      <div className={styles.container} ref={this.ref}>
         <div className={styles.timer}>
           <TestTimer currentTime={remainingTime} isPaused={false} />
         </div>
